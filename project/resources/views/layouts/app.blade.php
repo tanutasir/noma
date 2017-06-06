@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <style>
         .navbar{
             height:100px;
@@ -88,7 +89,19 @@
                 </div>
             </div>
         </nav>
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8" style="background-color: purple">
+
+                    {{--<div class="panel panel-default ">--}}
+                    hihihi
+                        {{--@yield('content')--}}
+
+                    {{--</div>--}}
+                </div>
+            </div>
+        </div>
+
 
 
     </div>

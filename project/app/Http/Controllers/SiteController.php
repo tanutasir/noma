@@ -8,6 +8,10 @@ class SiteController extends Controller
 {
     public function index()
     {
-        return view('site');
+        return view('site', ['h1' => "h1h1", 'body' => "bodybody"]);
+    }
+    public function rental()
+    {
+
     }
 }

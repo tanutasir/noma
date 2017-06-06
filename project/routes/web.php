@@ -28,7 +28,7 @@
 Route::get('/', function () {
     $locale = \App::getLocale();
     Session::put('language', 'lv');
-    return view('site');
+    return App::make("App\Http\Controllers\SiteController")->index();
 });
 Route::get('/lv', function () {
     $locale = \App::getLocale();
@@ -47,7 +47,9 @@ Route::get('/ru', function () {
     return view('site');
 });
 
-
+//Route::get('/', function ($id = null, $sid = null) {
+//    return App::make("App\Http\Controllers\HomeController")->home($id, $sid);
+//})->where(['id' => '[0-9]+', 'sid' => '[0-9]+']);
 
 
 Auth::routes();
