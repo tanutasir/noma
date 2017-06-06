@@ -3,3 +3,4 @@ Disallow:/
 Disallow:/project
 Disallow:/js
 Disallow:/css
+Disallow:/admin

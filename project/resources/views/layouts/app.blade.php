@@ -8,10 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ __('words.rental') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .navbar{
+            height:100px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -28,15 +33,28 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Auto Noma') }}
+                    <a class="navbar-brand" href="{{ url('/'.Session::get('language')) }}">
+                        AUTO NOMA
+                        {{--{{ config('app.name', 'Auto Noma') }}--}}
                     </a>
+                    {{ \App::getLocale() }}
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        &nbsp;<li>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Language
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{url('/lv/')}}">LV</a></li>
+                                    <li><a href="{{url('/en/')}}">EN</a></li>
+                                    <li><a href="{{url('/ru/')}}">RU</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -70,8 +88,9 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
+
+
     </div>
 
     <!-- Scripts -->
