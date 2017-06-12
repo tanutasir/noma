@@ -8,4 +8,12 @@ return [
     'about' => 'О нас',
     'contacts' => 'Контакты',
 
+    'lrental' => 'prokat-avtomobilei',
+    'ltransfers' => 'perevodi',
+    'laccessories' => 'aksessuari',
+    'labout' => 'o-nas',
+    'lcontacts' => 'kontakti',
+
+    'lang' => 'ru',
+
 ];
