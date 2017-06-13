@@ -22,7 +22,6 @@ class CreateDataLangTable extends Migration
             $table->string('title')->nullable();
             $table->string('h1')->nullable();
             $table->text('body')->nullable();
-            $table->timestamps();
 
             $table->foreign('data_id')
                 ->references('id')->on('data')

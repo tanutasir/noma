@@ -16,7 +16,6 @@ class CteateDataTable extends Migration
         Schema::create('data', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->timestamps();
         });
     }
 

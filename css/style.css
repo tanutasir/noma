@@ -1,11 +1,118 @@
-.col-center{
-    margin:0 auto;
+body{
+    background-color: purple;
 }
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
+#main-menu li{
+    /*list-style-type: none;*/
+    margin: 0;
+    padding: 5px 15px 5px 15px;
+    /*float: left;*/
+    background-color: purple;
+    color: white;
+    /*font-weight: bold;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-size: 10px;*/
+    border:1px solid #2c2e44;
+}
+#main-menu li a{
+    font-size: 14px;
+    color: white;
+}
+.clear{
+    /*clear: both;*/
+}
+#main-menu li.active{
+    background-color: white;
+}
+#main-menu li.active a{
+    color:black;
+}
+
+#main-menu li.first{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#main-menu li.last{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#langs li{
+    list-style-type: none;
+    margin: 0;
+    padding: 2px 8px 2px 8px;
+    float: left;
+    background-color: purple;
+    color: white;
+    /*font-weight: bold;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    border:1px solid #2c2e44;
+}
+#langs li.first{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#langs li.last{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#langs li a{
+    color:white;
+}
+#langs li.active{
+    background-color: white;
+}
+#langs li.active a{
+    color:black;
+}
+h1{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+.node{
+    border:1px solid #2c2e44;
+    min-height: 200px;
+    height:auto;
+    padding: 20px;
+    display: block;
+}
+.node img{
+    height: 160px;
+}
+.imgdiv{
+    border:1px solid red;
+    /*width:290px;*/
+    float: left;
+}
+.tabdiv{
+    /*width:auto;*/
+    border:1px solid red;
+    width:200px;
+    float: left;
+}
+.aprdiv{
+    border:1px solid red;
+    float: left;
+}
+.aprindiv{
+    border:1px solid red;
+    float: left;
+}
+.tabdiv td, .tabdiv th {
+    padding:0 5px;
+    border:1px solid black;
+}
+
+#ul{
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    overflow: auto;
+}
+#ul1 li{
+    border:1px solid black;
+    white-space: nowrap;
+}
+
+.tbl td{
+    text-align: center;
 }

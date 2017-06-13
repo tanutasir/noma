@@ -11,10 +11,10 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
 });
-*/
+
 //Route::get('/', 'SiteController@index')->name('site');
 //Route::get('/lv', 'SiteController@index')->name('site');
 //Route::get('/en', 'SiteController@index')->name('site');
@@ -26,33 +26,63 @@
 //});
 
 Route::get('/', function () {
-    $locale = \App::getLocale();
-    Session::put('language', 'lv');
-    return App::make("App\Http\Controllers\SiteController")->index();
-});
-Route::get('/lv', function () {
-    $locale = \App::getLocale();
-    \App::setLocale('lv');
-    Session::put('language', 'lv');
-    return view('site');
-});
-Route::get('/en', function () {
-    \App::setLocale('en');
-    Session::put('language', 'en');
-    return view('site');
-});
-Route::get('/ru', function () {
-    \App::setLocale('ru');
-    Session::put('language', 'ru');
-    return view('site');
+    $lang = "lv";
+    \App::setLocale($lang);
+    Session::put('language', $lang);
+    $rec = DB::table('data_lang')->where('link',__('words.lrental'))->first();
+    return App::make("App\Http\Controllers\SiteController")->sitehome($lang, $rec);
 });
 
-//Route::get('/', function ($id = null, $sid = null) {
-//    return App::make("App\Http\Controllers\HomeController")->home($id, $sid);
-//})->where(['id' => '[0-9]+', 'sid' => '[0-9]+']);
+
+
+
+//Route::get('/', function () {
+//    $locale = \App::getLocale();
+//    Session::put('language', 'lv');
+
+Route::get('/{lang}', function ($lang) {
+    \App::setLocale($lang);
+    Session::put('language', $lang);
+    if($lang == 'lv'){
+        return redirect('/', 301);
+    }else {
+        $rec = DB::table('data_lang')->where('link',__('words.lrental'))->first();
+        return App::make("App\Http\Controllers\SiteController")->sitehome($lang, $rec);
+    }
+})->where('lang','lv|en|ru');
+//Route::get('/en', function () {
+//    \App::setLocale('en');
+//    Session::put('language', 'en');
+//    return view('site');
+//});
+//Route::get('/ru', function () {
+//    \App::setLocale('ru');
+//    Session::put('language', 'ru');
+//    return view('site');
+//});
+
+
 
 
 Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/{lang}/admin', 'AdminController@index')->name('admin');
+Route::get('/{lang}/admin', 'AdminController@index');
 Route::get('/site', 'SiteController@index')->name('site');
+//Route::get('/{lang}/', 'SiteController@index');
+
+
+Route::get('/{lang}/{page}', function ($lang, $page) {
+   // Session::put('language', 'lv');
+        \App::setLocale($lang);
+  //  echo $lang."<br/>";
+  //  echo $page;
+    $rec = DB::table('data_lang')->where('lang', $lang)->where('link',$page)->first();
+    if($page == __('words.laccessories')){
+        return App::make("App\Http\Controllers\SiteController")->accesories($lang, $rec);
+    }else{
+        return App::make("App\Http\Controllers\SiteController")->site($lang, $rec);
+    }
+})->where('lang','lv|en|ru');;
+
+Route::get('/admin/createcars', 'AdminController@createCars');
+Route::post('/admin/uploadcar', 'AdminController@uploadCar');
