@@ -7,7 +7,59 @@
         </div>
 
         <div class="panel-body">
-            <div class="node row">
+            <?php
+                $cars = DB::table('cars')->orderBy('sid', 'asc')->get();
+
+            ?>
+            @foreach($cars as $car)
+                <div class="node row">
+                    <div class="imgdiv" align="center">
+                        <img with="255" height="170" src="{{$car->img}}">
+                        <br/>
+                        <a href="{{__('words.Photo galery')}}">( {{__('words.Photo galery')}} )</a>
+                    </div>
+                    <div class="tabdiv">
+                        <h2 class="h2">{{$car->nr}}</h2>
+                        <?php
+                            $tbls = DB::table('cars_tbl')->where('cars_id',$car->id)->get();
+                        ?>
+                        <table class="tbl">
+                            <tr>
+                                <th>Dienas</th>
+                                <th>Maksa</th>
+                            </tr>
+                            @foreach($tbls as $tbl)
+                                <tr>
+                                    <td>{{$tbl->dienas}}</td>
+                                    <td>&euro;{{$tbl->cena}}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                    <div class="aprdiv">
+                        <div>{{$car->name}}</div>
+                        <div>
+                            <div>{{__('words.Equipment')}}</div>
+                            <ul id="ul">
+                                <li>9 sēdvietas</li>
+                                <li>6 ātrumi</li>
+                                <li>2.0TDi (140Zs)</li>
+                                <li>dīzeļdegviela</li>
+                                <li>klimatkontrole</li>
+                                <li>elektriskie logu pacēlāji</li>
+                                <li>elekt.reg.spoguļi</li>
+                            </ul>
+                        </div>
+                        <div style="float: left;">
+                            Informējam, ka šajā tīmekļa vietnē tiek izmantotas sīkdatnes (angļu val.
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
+
+
+       {{--     <div class="node row">
                 <div class="imgdiv col-md-4">
                     <img src="/img/aa3200.jpg"/>
                 </div>
@@ -50,7 +102,7 @@
             </div>
             <div class="node row">
 
-            </div>
+            </div>--}}
         </div>
     </div>
 @endsection

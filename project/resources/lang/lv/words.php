@@ -15,4 +15,7 @@ return [
     'lcontacts' => 'kontakti',
 
     'lang' => 'lv',
+    'Photo galery' => 'Foto galerija',
+    'Equipment' => 'Aprīkojums',
+
 ];

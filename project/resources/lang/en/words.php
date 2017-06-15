@@ -15,5 +15,6 @@ return [
     'lcontacts' => 'contacts',
 
     'lang' => 'en',
-
+    'Photo galery' => 'Photo galery',
+    'Equipment' => 'Equipment',
 ];

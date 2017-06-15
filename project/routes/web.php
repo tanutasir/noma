@@ -83,6 +83,8 @@ Route::get('/{lang}/{page}', function ($lang, $page) {
         return App::make("App\Http\Controllers\SiteController")->site($lang, $rec);
     }
 })->where('lang','lv|en|ru');;
-
+Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 Route::get('/admin/createcars', 'AdminController@createCars');
 Route::post('/admin/uploadcar', 'AdminController@uploadCar');
+
+Route::get('/admin/cars', 'CarsController@cars');

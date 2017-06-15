@@ -5,8 +5,8 @@
 
     RewriteEngine On
 
-    RewriteCond %{HTTP_HOST} ^213\.180\.109\.39
-    RewriteRule (.*) http://noma.atstudija.id.lv/$1 [R=301,L]
+#    RewriteCond %{HTTP_HOST} ^213\.180\.109\.39
+#    RewriteRule (.*) http://noma.atstudija.id.lv/$1 [R=301,L]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -21,10 +21,10 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    RewriteCond %{HTTP_HOST} !^www.noma.atstudija.id.lv$ [NC]
-    RewriteRule ^(.*)$ http://www.noma.atstudija.id.lv/$1 [L,R=301]
-
-
-    SetEnvIfNoCase User-Agent "^libwww-perl*" block_bad_bots
-    Deny from env=block_bad_bots
+#    RewriteCond %{HTTP_HOST} !^www.noma.atstudija.id.lv$ [NC]
+#    RewriteRule ^(.*)$ http://www.noma.atstudija.id.lv/$1 [L,R=301]
+#
+#
+#    SetEnvIfNoCase User-Agent "^libwww-perl*" block_bad_bots
+#    Deny from env=block_bad_bots
 </IfModule>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class CarsController extends Controller
 {
     public function __construct()
     {
@@ -12,6 +12,21 @@ class AdminController extends Controller
     }
 
     public function index()
+    {
+        return view('admin');
+    }
+
+    public function cars()
+    {
+        return view('cars/cars');
+    }
+
+    public function saveCars()
+    {
+        return view('admin');
+    }
+
+    public function deleteCars()
     {
         return view('admin');
     }

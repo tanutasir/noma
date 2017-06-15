@@ -65,38 +65,43 @@ body{
     color:black;
 }
 h1{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     font-size: 20px;
 }
 .node{
-    border:1px solid #2c2e44;
-    min-height: 200px;
+    border-top:1px solid #2c2e44;
+    /*min-height: 200px;*/
     height:auto;
-    padding: 20px;
+    padding: 10px;
     display: block;
 }
 .node img{
     height: 160px;
 }
 .imgdiv{
-    border:1px solid red;
+    /*border:1px solid red;*/
     /*width:290px;*/
     float: left;
 }
 .tabdiv{
-    /*width:auto;*/
-    border:1px solid red;
-    width:200px;
+    width:auto;
+    padding: 0 0 5px 15px;
+    /*border:1px solid red;*/
+    /*width:150px;*/
+    min-height:185px;
     float: left;
 }
 .aprdiv{
-    border:1px solid red;
+    min-width: 300px;
+    padding: 10px 15px 5px 15px;
+    /*border:1px solid red;*/
     float: left;
 }
 .aprindiv{
     border:1px solid red;
     float: left;
 }
+
 .tabdiv td, .tabdiv th {
     padding:0 5px;
     border:1px solid black;
@@ -112,7 +117,16 @@ h1{
     border:1px solid black;
     white-space: nowrap;
 }
-
+.tbl{
+    margin-top: 10px;
+}
 .tbl td{
     text-align: center;
+}
+.h2{
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    margin: 0 0 0 5px;
+}
+img{
+    border: solid 1px black;
 }

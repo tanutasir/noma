@@ -39,7 +39,25 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    &nbsp;<li class="">
+                        <a href="{{url('/admin/cars')}}">Automašīnu noma</a>
+                    </li>
+                    <li class="">
+                        <a href="{{url('/admin/cars')}}">Cars</a>
+                    </li>
+                    <li class="">
+                        <a href="{{url('/admin/cars')}}">Cars</a>
+                    </li>
+                    <li class="">
+                        <a href="{{url('/admin/cars')}}">Cars</a>
+                    </li>
+
+                    {{--<li class="{{$rec->link == __('words.ltransfers')?'active':''}}">--}}
+                        {{--<a href="/{{__('words.lang')}}/{{__('words.ltransfers')}}">{{__('words.transfers')}}</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="{{$rec->link == __('words.laccessories')?'active':''}}">--}}
+                        {{--<a href="/{{__('words.lang')}}/{{__('words.laccessories')}}">{{__('words.accessories')}}</a>--}}
+                    {{--</li>--}}
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -80,6 +98,8 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 <script src="{{ asset('libs/uploadify/jquery.uploadify.min.js') }}?<?php echo @date("U")?>"  type="text/javascript"></script>
+<script src="{{ asset('libs/sortable/jquery-sortable.js') }}?<?php echo @date("U")?>"  type="text/javascript"></script>
+
 <script src="{{ asset('js/admin_script.js') }}"  type="text/javascript></script>
 <script type="text/javascript">
     $(function() {

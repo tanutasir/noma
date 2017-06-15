@@ -15,5 +15,9 @@ return [
     'lcontacts' => 'kontakti',
 
     'lang' => 'ru',
+    'Photo galery' => 'Фотогалерея',
+    'Equipment' => 'Оборудование',
+
+
 
 ];
