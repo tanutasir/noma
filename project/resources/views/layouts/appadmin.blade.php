@@ -39,17 +39,28 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;<li class="">
-                        <a href="{{url('/admin/cars')}}">Automašīnu noma</a>
+                    &nbsp;<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Automašinu noma <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Automašinas</a></li>
+                            <li><a href="#">Automašinas</a></li>
+                            <li><a href="#">Automašinas</a></li>
+                        </ul>
                     </li>
                     <li class="">
-                        <a href="{{url('/admin/cars')}}">Cars</a>
+                        <a href="{{url('/admin/transferi')}}">Transfēri</a>
                     </li>
                     <li class="">
-                        <a href="{{url('/admin/cars')}}">Cars</a>
+                        <a href="#">Papildaprīkojums</a>
                     </li>
                     <li class="">
-                        <a href="{{url('/admin/cars')}}">Cars</a>
+                        <a href="#">Par mums</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Kontakti</a>
                     </li>
 
                     {{--<li class="{{$rec->link == __('words.ltransfers')?'active':''}}">--}}
@@ -91,8 +102,15 @@
             </div>
         </div>
     </nav>
-
-    @yield('content')
+    {{--<div class="container">--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">--}}
+                {{--<div class="panel panel-default">--}}
+                     @yield('content')
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 </div>
 
 <!-- Scripts -->

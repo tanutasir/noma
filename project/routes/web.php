@@ -87,4 +87,4 @@ Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 Route::get('/admin/createcars', 'AdminController@createCars');
 Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 
-Route::get('/admin/cars', 'CarsController@cars');
+Route::get('/admin/transferi', 'AtransfersController@view');
