@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AtransfersController extends Controller
+class AparmumsController extends Controller
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class AtransfersController extends Controller
 
     public function view()
     {
-        return view('admin/atransferi');
+        return view('admin/aparmums');
     }
 
     public function save()
@@ -40,15 +40,15 @@ class AtransfersController extends Controller
         if(isset($_POST['InputBodyRu'])){$inputBodyRu = $_POST['InputBodyRu'];}
 
         DB::table('data_lang')
-            ->where('lang', 'lv')->where('link','transferi')
+            ->where('lang', 'lv')->where('link','par-mums')
             ->update([
                 'title' => htmlspecialchars($inputTitleLv,ENT_QUOTES),
                 'meta' => htmlspecialchars($inputMetaDescriptionLv,ENT_QUOTES),
                 'h1' => htmlspecialchars($inputH1Lv,ENT_QUOTES),
                 'body' => htmlspecialchars($inputBodyLv,ENT_QUOTES)
-            ]);
+                ]);
         DB::table('data_lang')
-            ->where('lang', 'en')->where('link','transfers')
+            ->where('lang', 'en')->where('link','about-us')
             ->update([
                 'title' => htmlspecialchars($inputTitleEn,ENT_QUOTES),
                 'meta' => htmlspecialchars($inputMetaDescriptionEn,ENT_QUOTES),
@@ -56,7 +56,7 @@ class AtransfersController extends Controller
                 'body' => htmlspecialchars($inputBodyEn,ENT_QUOTES)
             ]);
         DB::table('data_lang')
-            ->where('lang', 'ru')->where('link','perevodi')
+            ->where('lang', 'ru')->where('link','o-nas')
             ->update([
                 'title' => htmlspecialchars($inputTitleRu,ENT_QUOTES),
                 'meta' => htmlspecialchars($inputMetaDescriptionRu,ENT_QUOTES),
@@ -65,7 +65,7 @@ class AtransfersController extends Controller
             ]);
 
 
-        return redirect('/lv/transferi');
+        return redirect('/lv/par-mums');
 //        return $inputBodyLv;
     }
 

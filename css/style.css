@@ -1,5 +1,5 @@
 body{
-    background-color: purple;
+    background-color: #5F021F;/* #66002B;*/
 }
 #main-menu li{
     /*list-style-type: none;*/
@@ -69,14 +69,17 @@ h1{
     font-size: 20px;
 }
 .node{
-    border-top:1px solid #2c2e44;
+    border-bottom:1px solid #d3e0e9;
     /*min-height: 200px;*/
     height:auto;
-    padding: 10px;
+    padding: 15px;
     display: block;
 }
+.node:last-child{
+    border-bottom:none;
+}
 .node img{
-    height: 160px;
+    /*height: 160px;*/
 }
 .imgdiv{
     /*border:1px solid red;*/
@@ -88,14 +91,17 @@ h1{
     padding: 0 0 5px 15px;
     /*border:1px solid red;*/
     /*width:150px;*/
-    min-height:185px;
+    min-height:192px;
     float: left;
 }
 .aprdiv{
-    min-width: 300px;
+    min-width: 250px;
     padding: 10px 15px 5px 15px;
     /*border:1px solid red;*/
     float: left;
+}
+.aprdiv li{
+    list-style: none;
 }
 .aprindiv{
     border:1px solid red;
@@ -103,15 +109,22 @@ h1{
 }
 
 .tabdiv td, .tabdiv th {
-    padding:0 5px;
-    border:1px solid black;
+    padding:0 10px;
+    border:1px solid #800080;
 }
 
 #ul{
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
+    -webkit-column-width: 50% ;
     overflow: auto;
+}
+#ul1{
+    /*-moz-column-count: 2;*/
+    /*-webkit-column-count: 2;*/
+    /*column-count: 2;*/
+    /*overflow: auto;*/
 }
 #ul1 li{
     border:1px solid black;
@@ -127,6 +140,52 @@ h1{
     /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     margin: 0 0 0 5px;
 }
-img{
-    border: solid 1px black;
+.node img{
+    border: solid 1px #800080;
+}
+#lang-bar li.active{
+    background-color: white;
+}
+#lang-bar li a{
+    color: #555555;
+}
+.navbar-default{
+    background-color: #5F021F;
+}
+
+nav li.active >a{
+    background-color: white;
+}
+.navbar-default .navbar-brand{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+}
+.navbar-default .navbar-nav>li>a{
+    border-radius: 5px 5px 0 0;
+}
+
+.navbar-default .navbar-nav>li:hover>a{
+    color: #999;
+}
+.navbar-default .navbar-nav > .active > a{
+    background-color: white;
+}
+.navbar-default .navbar-nav > .active > a:hover{
+    background-color: white;
+}
+#lang-bar li a{
+    color: white;
+}
+#lang-bar li{
+    border-radius: 3px;
+}
+#lang-bar li.active a{
+    color: #5F021F;
+
+}
+#lang-bar ul.dropdown-menu li a{
+    color:black;
 }

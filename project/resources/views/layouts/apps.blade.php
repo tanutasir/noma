@@ -7,8 +7,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="{{ $rec->meta }}">
-    <title>{{ $rec->title }}</title>
+    <meta name="description" content="{!! $rec->meta !!}">
+    <title>{!! $rec->title!!}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -18,7 +18,8 @@
     <div id="app">
         <nav class="navbar navbar-default {{--navbar-static-top--}}">
             <div class="container">
-
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -42,13 +43,28 @@
                     }
                 ?>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <div style="height: 50px;">
-                        <ul class="nav navbar-nav navbar-right">
+                    <div style="height: 100px;">
+
+                        <ul class="navbar-right list-inline" id="lang-bar">
                             <!-- Authentication Links -->
                             {{--<ul id="langs">--}}
-                            <li class="first {{__('words.lang') == 'lv' ?'active':''}}"><a href="{{url('/lv/')}}">LV</a></li>
-                            <li class="{{__('words.lang') == 'en' ?'active':''}}"><a href="{{url('/en/')}}">EN</a></li>
-                            <li class="last {{__('words.lang') == 'ru' ?'active':''}}"><a href="{{url('/ru/')}}">RU</a></li>
+                            <?php
+
+                            $data = DB::table('data')->where('id', $rec->data_id)->first();
+                                $a = 'words.l'.$data->name;
+                                $lat = Lang::get('words.l'.$data->name,[],'lv');
+                                if($data->name == 'rental'){
+                                    $lat = "/";
+                                }else{
+                                    $lat = '/lv/'.$lat;
+                                }
+                                $eng = Lang::get('words.l'.$data->name,[],'en');
+                                $rus = Lang::get('words.l'.$data->name,[],'ru');
+                            ?>
+
+                            <li class="first {{__('words.lang') == 'lv' ?'active':''}}"><a href="{{url($lat)}}">LV</a></li>
+                            <li class="{{__('words.lang') == 'en' ?'active':''}}"><a href="{{url('/en/'.$eng)}}">EN</a></li>
+                            <li class="last {{__('words.lang') == 'ru' ?'active':''}}"><a href="{{url('/ru/'.$rus)}}">RU</a></li>
                             {{--</ul>--}}
 
                             @if (Auth::guest())
@@ -80,6 +96,7 @@
                                 </li>
                             @endif
                         </ul>
+
                     </div>
 
 
@@ -110,19 +127,22 @@
 
                 </div>
             </div>
+            </div>
+            </div>
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                    <div class="panel panel-default">
-                        @yield('content')
-                    </div>
-                </div>
+
+                    @yield('content')
+
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>--}}
+    <script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 </html>

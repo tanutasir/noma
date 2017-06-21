@@ -91,7 +91,7 @@ return [
     */
 
     'fallback_locale' => 'en',
-    'clocale' => 'lv',
+//    'clocale' => 'lv',
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

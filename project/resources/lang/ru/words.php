@@ -18,6 +18,19 @@ return [
     'Photo galery' => 'Фотогалерея',
     'Equipment' => 'Оборудование',
 
+    'how to find us' => 'Как нас найти',
+    'contact us' => 'Связаться с Нами',
+
+    'name' => 'Имя*',
+    'e-mail' => 'e-mail*',
+    'phone' => 'Номер телефона*',
+    'message' => 'Ваше сообщение*',
+    'send' => 'Отправить',
+
+    'enter name' => 'Enter name',
+    'enter e-mail' => 'e-mail',
+    'enter phone' => '',
+    'enter message' => '',
 
 
 ];

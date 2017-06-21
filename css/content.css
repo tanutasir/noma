@@ -1,6 +1,6 @@
-.h1{
-    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    font-size: 20px;
+body {
+    display: block;
+    margin: 8px;/* 0 8px 0;*/
 }
 .cke_editable {
     font-family: Raleway, sans-serif;

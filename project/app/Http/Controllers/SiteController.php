@@ -16,9 +16,14 @@ class SiteController extends Controller
 
         return view('site', ['lang' => $lang, 'rec' => $rec]);
     }
-    public function accesories($lang, $rec)
+    public function accessories($lang, $rec)
     {
 
-        return view('accesories', ['lang' => $lang, 'rec' => $rec]);
+        return view('accessories', ['lang' => $lang, 'rec' => $rec]);
+    }
+    public function contacts($lang, $rec)
+    {
+
+        return view('contacts', ['lang' => $lang, 'rec' => $rec]);
     }
 }

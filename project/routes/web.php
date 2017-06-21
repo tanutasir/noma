@@ -77,14 +77,23 @@ Route::get('/{lang}/{page}', function ($lang, $page) {
   //  echo $lang."<br/>";
   //  echo $page;
     $rec = DB::table('data_lang')->where('lang', $lang)->where('link',$page)->first();
-    if($page == __('words.laccessories')){
-        return App::make("App\Http\Controllers\SiteController")->accesories($lang, $rec);
+    if($page == __('words.lrental')){
+        return App::make("App\Http\Controllers\SiteController")->sitehome($lang, $rec);
     }else{
+        if($page == __('words.lcontacts')){
+            return App::make("App\Http\Controllers\SiteController")->contacts($lang, $rec);
+        }else{
+            if($page == __('words.laccessories')){
+                return App::make("App\Http\Controllers\SiteController")->accessories($lang, $rec);
+            }
         return App::make("App\Http\Controllers\SiteController")->site($lang, $rec);
     }
-})->where('lang','lv|en|ru');;
+}})->where('lang','lv|en|ru');
 Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 Route::get('/admin/createcars', 'AdminController@createCars');
 Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 
 Route::get('/admin/transferi', 'AtransfersController@view');
+Route::any('/admin/par-mums', 'AparmumsController@view');
+Route::any('/admin/par-mums/save', 'AparmumsController@save');
+Route::any('/admin/transferi/save', 'AtransfersController@save');

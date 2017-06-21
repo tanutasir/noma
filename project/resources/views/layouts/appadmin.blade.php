@@ -13,7 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/uploadify/uploadify.css') }}"  rel="stylesheet">
+    {{--<link href="{{ asset('css/content.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('css/admin_style.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -57,7 +59,7 @@
                         <a href="#">Papildaprīkojums</a>
                     </li>
                     <li class="">
-                        <a href="#">Par mums</a>
+                        <a href="{{url('/admin/par-mums')}}">Par mums</a>
                     </li>
                     <li class="">
                         <a href="#">Kontakti</a>
@@ -102,38 +104,21 @@
             </div>
         </div>
     </nav>
-    {{--<div class="container">--}}
-        {{--<div class="row">--}}
-            {{--<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">--}}
-                {{--<div class="panel panel-default">--}}
+    <div class="container">
+        <div class="row">
+
                      @yield('content')
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+
+        </div>
+    </div>
 </div>
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 <script src="{{ asset('libs/uploadify/jquery.uploadify.min.js') }}?<?php echo @date("U")?>"  type="text/javascript"></script>
 <script src="{{ asset('libs/sortable/jquery-sortable.js') }}?<?php echo @date("U")?>"  type="text/javascript"></script>
+<script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
+<script src="{{ asset('js/admin_script.js') }}"  type="text/javascript"></script>
 
-<script src="{{ asset('js/admin_script.js') }}"  type="text/javascript></script>
-<script type="text/javascript">
-    $(function() {
-        setTimeout(function(){
-            $('#file_upload').uploadify({
-                'formData'      : {'_token' : '{{ csrf_token() }}'},
-                'swf'      : 'http://noma/libs/uploadify/uploadify.swf',
-                'uploader' : 'http://noma/admin/uploadcar',
-                'onUploadSuccess' : function(file, data, response) {
-                    alert('The file was saved to: ' + data);
-                },
-                'cancelImg' : 'http://noma/libs/uploadify/uploadify-cancel.png'
-
-            });
-        },10);
-    });
-</script>
 </body>
 </html>
