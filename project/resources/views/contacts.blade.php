@@ -9,7 +9,7 @@
             </div>
 
             <div class="panel-body">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <h2>{{__('words.how to find us')}}</h2>
                     {{--<iframe width="100%" height="450"--}}
                             {{--frameborder="0"--}}
@@ -27,7 +27,7 @@
                             allowfullscreen>
                     </iframe>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <h2>{{__('words.contact us')}}</h2>
                     <form>
                         <div class="form-group">
@@ -53,18 +53,7 @@
                 </div>
                 <div class="col-md-12">
                     <h2>Rekvizīti</h2>
-                    <b>SIA "RENT POINT"</b><br/>
-
-                    Tālrunis: +37126510039, +371 26803388<br/>
-                    E-pasts: info@rentpoint.eu<br/>
-                    Reģ. nr.: LV40103401741<br/>
-                    Juridiskā adrese: Rīga, Čiekurkalna 6. šķērslīnija 16-13, Latvija<br/>
-                    <br/>
-                    Banka: Nordea Bank Finland Plc Latvijas filiāle<br/>
-                    Kods: NDEALV2X<br/>
-                    Konts: LV76 NDEA 0000 0831 26244<br/>
-                    <br/>
-                    Biroja adrese: Rīga, Sporta iela 15, Rīga, Latvija<br/>
+                    {!! (isset($rec->body)) ? htmlspecialchars_decode($rec->body,ENT_QUOTES)  : "" !!}
                 </div>
 
             </div>

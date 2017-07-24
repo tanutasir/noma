@@ -97,3 +97,6 @@ Route::get('/admin/transferi', 'AtransfersController@view');
 Route::any('/admin/par-mums', 'AparmumsController@view');
 Route::any('/admin/par-mums/save', 'AparmumsController@save');
 Route::any('/admin/transferi/save', 'AtransfersController@save');
+
+Route::any('/admin/kontakti', 'AkontaktiController@view');
+Route::any('/admin/kontakti/save', 'AkontaktiController@save');

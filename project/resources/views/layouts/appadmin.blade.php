@@ -62,7 +62,7 @@
                         <a href="{{url('/admin/par-mums')}}">Par mums</a>
                     </li>
                     <li class="">
-                        <a href="#">Kontakti</a>
+                        <a href="{{url('/admin/kontakti')}}">Kontakti</a>
                     </li>
 
                     {{--<li class="{{$rec->link == __('words.ltransfers')?'active':''}}">--}}

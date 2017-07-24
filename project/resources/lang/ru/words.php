@@ -12,7 +12,7 @@ return [
     'ltransfers' => 'perevodi',
     'laccessories' => 'aksessuari',
     'labout' => 'o-nas',
-    'lcontacts' => 'kontakti',
+    'lcontacts' => 'kontakty',
 
     'lang' => 'ru',
     'Photo galery' => 'Фотогалерея',
