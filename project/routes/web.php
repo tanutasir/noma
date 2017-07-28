@@ -93,10 +93,14 @@ Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 Route::get('/admin/createcars', 'AdminController@createCars');
 Route::post('/admin/uploadcar', 'AdminController@uploadCar');
 
-Route::get('/admin/transferi', 'AtransfersController@view');
 Route::any('/admin/par-mums', 'AparmumsController@view');
 Route::any('/admin/par-mums/save', 'AparmumsController@save');
+
+Route::get('/admin/transferi', 'AtransfersController@view');
 Route::any('/admin/transferi/save', 'AtransfersController@save');
 
 Route::any('/admin/kontakti', 'AkontaktiController@view');
 Route::any('/admin/kontakti/save', 'AkontaktiController@save');
+
+Route::any('/admin/cars', 'AkontaktiController@view');
+Route::any('/admin/cars/save', 'AhomeController@save');
